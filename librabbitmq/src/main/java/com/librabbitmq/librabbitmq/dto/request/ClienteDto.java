@@ -1,4 +1,4 @@
-package com.rabbitmq.product.model;
+package com.librabbitmq.librabbitmq.dto.request;
 
 import java.io.Serializable;
 
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor @AllArgsConstructor
-public class Cliente implements Serializable{
+public class ClienteDto implements Serializable{
 	private static final long serialVersionUID = 6319336915360336657L;
 	
 	private String name;
