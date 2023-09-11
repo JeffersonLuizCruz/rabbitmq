@@ -17,14 +17,9 @@ public class RabbitmqConfig {
 	private static final String DIRECT_EXCHANGE			= "amq.direct";
 	private static final String DIRECT_ROUNTING_KEY_A	= "rounting_key_direct_a";
 	private static final String CONTABILIDADE 			= "CONTABILIDADE";
-	private static final String FINANCEIRO 				= "FINANCEIRO";
 	
-	private AmqpAdmin amqpAdmin;
+	@Autowired private AmqpAdmin amqpAdmin;
 	
-	
-	public RabbitmqConfig(AmqpAdmin amqpAdmin) {
-		this.amqpAdmin = amqpAdmin;
-	}
 	private Queue queue(String queue) {
 		return new Queue(queue, true, false, false);
 	}
@@ -40,7 +35,6 @@ public class RabbitmqConfig {
 	@PostConstruct
 	private void init() {
 		Queue queueContabilidade = this.queue(CONTABILIDADE);
-//		Queue queueFinanceiro = this.queue(FINANCEIRO);
 		
 		DirectExchange directExchange = this.directExchange();
 		
