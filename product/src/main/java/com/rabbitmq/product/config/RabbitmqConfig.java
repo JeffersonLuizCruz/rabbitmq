@@ -18,7 +18,7 @@ public class RabbitmqConfig {
 	@Autowired private AmqpAdmin amqpAdmin;
 	
 	private Queue queue(String queue) {
-		return new Queue(queue, false, false, false);
+		return new Queue(queue, true, false, false);
 	}
 	
 	private DirectExchange directExchange() {
